@@ -4,16 +4,14 @@ import "../App.css";
 function Main() {
     const [ingredients, setIngredients] = useState([]);
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        const formData = new FormData(event.currentTarget);
+    function handleSubmit(formData) {
         const newIngredient = formData.get("ingredient");
         setIngredients(prevIngredient => [...prevIngredient, newIngredient])
     }
 
     return (
         <main>
-            <form onSubmit={handleSubmit}>
+            <form action={handleSubmit}>
                 <input type="text" placeholder="e.g. Oregano" aria-label="Add ingredient" name="ingredient" />
                 <button>Add Ingredient</button>
             </form>
