@@ -3,6 +3,7 @@ import "../App.css";
 
 function Main() {
     const [ingredients, setIngredients] = useState([]);
+    const [recipeShown, setRecipeShown] = useState(false)
 
     function handleSubmit(formData) {
         const newIngredient = formData.get("ingredient");
@@ -29,7 +30,7 @@ function Main() {
                                 <h3>Ready for a recipe?</h3>
                                 <p>Generate a recipe from your list of ingredients.</p>
                             </div>
-                            <button>Get a recipe</button>
+                            <button onClick={() => setRecipeShown(true)}>Get a recipe</button>
                         </div>
                     )}
                 </section>
