@@ -14,7 +14,7 @@ function IngredientList({ ingredients, setRecipeShown }) {
                     <h3>Ready for a recipe?</h3>
                     <p>Generate a recipe from your list of ingredients.</p>
                 </div>
-                <button onClick={() => setRecipeShown(true)}>Get a recipe</button>
+                <button onClick={setRecipeShown}>Get a recipe</button>
             </div>
         )}
     </section>

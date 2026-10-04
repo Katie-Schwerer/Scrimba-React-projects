@@ -12,7 +12,8 @@
   "dependencies": {
     "@huggingface/inference": "^4.13.30",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-markdown": "^8.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
