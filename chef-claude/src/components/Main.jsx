@@ -9,6 +9,14 @@ function Main() {
     const [recipeShown, setRecipeShown] = useState(false);
     const [recipe, setRecipe] = useState("");
 
+    const recipeSection = React.useRef(null);
+
+    React.useEffect(() => {
+        if (recipe !== "" && recipeSection.current !== null) {
+            recipeSection.current.scrollIntoView({ behavior: "smooth" })
+        }
+    }, [recipe])
+
     function handleSubmit(formData) {
         const newIngredient = formData.get("ingredient");
         setIngredients(prevIngredient => [...prevIngredient, newIngredient])
@@ -27,7 +35,7 @@ function Main() {
                 <button>Add Ingredient</button>
             </form>
             {ingredients.length > 0 && (
-                <IngredientList ingredients={ingredients} setRecipeShown={toggleRecipeShown} />
+                <IngredientList ingredients={ingredients} setRecipeShown={toggleRecipeShown} recipeSection={recipeSection} />
             )}
             {recipeShown && <ClaudeRecipe recipe={recipe} />}
         </main>
